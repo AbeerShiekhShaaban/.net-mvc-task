@@ -1,0 +1,42 @@
+﻿
+
+<h2>Sign Up</h2>
+
+@using (Html.BeginForm("Signup", "Routes", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label>Email:</label><br />
+        <div class="col-md-10">
+            @Html.TextBox("Email", "", new { @class = "form-control", required = "true", placeholder = "Enter your email" })
+        </div>
+    </div>
+    
+    <div></div>
+    
+    <div class="form-group">
+        <label>Password:</label><br />
+        <div class="col-md-10">
+            @Html.Password("Password", "Enter your password", new { @class = "form-control", placeholder = "Enter your password", required="true" , pattern="[a-z0-9]{8,}"
+           , title="1) Password must not contian spaces or symbols.2) Minimum length for password is 8" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Confirm Password:</label><br />
+        <div class="col-md-10">
+            @Html.Password("ConfirmPassword", "Retype password", new { @class = "form-control", required = "true" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Upload Image:</label><br />
+        <div class="col-md-10">
+            <input type="file" name="Image" id="File" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+
